@@ -1,0 +1,25 @@
+# See https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+# clang-format -style=google -dump-config
+# clang-format -i `allC`
+
+BasedOnStyle: Google
+ColumnLimit: 119  # default is 80
+
+Language: Cpp
+# Standard: Latest  # Or: Auto, Cpp17, Cpp20.
+AlwaysBreakTemplateDeclarations: MultiLine  # default is Yes
+AllowShortCaseLabelsOnASingleLine: true     # default is false
+DerivePointerAlignment: false               # default is true
+ReflowComments: false                       # default is true
+IncludeBlocks: Preserve                     # sort each #include block separately
+# ForEachMacros: ['foreach', 'Q_FOREACH', 'BOOST_FOREACH', 'for_int', 'for_intL', 'for_size_t']
+# SpaceBeforeParens: Custom
+# SpaceBeforeParensOptions:
+#   AfterForeachMacros: false
+
+# AllowShortFunctionsOnASingleLine: Inline  # default is All
+# CommentPragmas: '^///'                    # default is '^ IWYU pragma:'; however, it still indents it.
+# Standard: Latest                          # default is Auto  # not recognized by Visual Studio
+
+# StatementMacros: ['Q_UNUSED', 'QT_REQUIRE_VERSION']
+# MaxEmptyLinesToKeep: 1
