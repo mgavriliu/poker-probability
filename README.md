@@ -101,66 +101,70 @@ Analyze specific hand type with GPU:
 ## Output Format
 
 ### All Hand Types Analysis
+
+- CPU: 2x Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz
+- GPU: Nvidia Titan V 12GB
+
 ```
 Starting poker probability simulation...
 Analyzing all hand types
 Implementation: CPU
-Hands to simulate: 100,000,000
+Hands to simulate: 2,000,000,000
 CPU Threads: 40
 
 Running CPU implementation...
 [=====================================================================>] 99 %
-Simulating 100,000,000 poker hands...
+Simulating 2,000,000,000 poker hands...
 
 Summary Table (CPU):
 ================================================================================
 Hand Type                 Count  Calculated Theoretical       Error
 --------------------------------------------------------------------------------
-Royal Flush                 171     0.0002%     0.0002%     0.0000%
-Straight Flush            1,316     0.0013%     0.0014%     0.0001%
-Four of a Kind           23,946     0.0239%     0.0240%     0.0001%
-Full House              143,991     0.1440%     0.1441%     0.0001%
-Flush                   197,102     0.1971%     0.1965%     0.0006%
-Straight                391,568     0.3916%     0.3925%     0.0009%
-Three of a Kind       2,114,275     2.1143%     2.1128%     0.0015%
-Two Pair              4,750,505     4.7505%     4.7539%     0.0034%
-One Pair             42,255,323    42.2553%    42.2569%     0.0016%
-High Card            50,121,803    50.1218%    50.1177%     0.0041%
+Royal Flush               3,021     0.0002%     0.0002%     0.0000%
+Straight Flush           27,447     0.0014%     0.0014%     0.0000%
+Four of a Kind          479,143     0.0240%     0.0240%     0.0001%
+Full House            2,880,489     0.1440%     0.1441%     0.0001%
+Flush                 3,934,757     0.1967%     0.1965%     0.0002%
+Straight              7,846,467     0.3923%     0.3925%     0.0002%
+Three of a Kind      42,267,240     2.1134%     2.1128%     0.0006%
+Two Pair             95,092,577     4.7546%     4.7539%     0.0007%
+One Pair            845,161,786    42.2581%    42.2569%     0.0012%
+High Card         1,002,307,073    50.1154%    50.1177%     0.0023%
 --------------------------------------------------------------------------------
-Total:              100,000,000
-Time: 12.36s
-Speed: 8,092,837 hands/s
+Total:            2,000,000,000
+Time: 227.52s
+Speed: 8,790,598 hands/s
 ================================================================================
 
 Running CUDA implementation...
 
-Simulating 100,000,000 poker hands...
+Simulating 2,000,000,000 poker hands...
 
 Summary Table (CUDA GPU):
 ================================================================================
 Hand Type                 Count  Calculated Theoretical       Error
 --------------------------------------------------------------------------------
-Royal Flush                 147     0.0001%     0.0002%     0.0000%
-Straight Flush            1,429     0.0014%     0.0014%     0.0000%
-Four of a Kind           23,898     0.0239%     0.0240%     0.0001%
-Full House              144,187     0.1442%     0.1441%     0.0001%
-Flush                   196,264     0.1963%     0.1965%     0.0002%
-Straight                393,402     0.3934%     0.3925%     0.0009%
-Three of a Kind       2,111,028     2.1110%     2.1128%     0.0018%
-Two Pair              4,752,307     4.7523%     4.7539%     0.0016%
-One Pair             42,260,141    42.2601%    42.2569%     0.0032%
-High Card            50,117,191    50.1172%    50.1177%     0.0005%
+Royal Flush               3,160     0.0002%     0.0002%     0.0000%
+Straight Flush           27,919     0.0014%     0.0014%     0.0000%
+Four of a Kind          479,600     0.0240%     0.0240%     0.0000%
+Full House            2,881,449     0.1441%     0.1441%     0.0000%
+Flush                 3,929,038     0.1965%     0.1965%     0.0000%
+Straight              7,844,940     0.3922%     0.3925%     0.0003%
+Three of a Kind      42,244,609     2.1122%     2.1128%     0.0006%
+Two Pair             95,071,649     4.7536%     4.7539%     0.0003%
+One Pair            845,137,324    42.2569%    42.2569%     0.0000%
+High Card         1,002,380,307    50.1190%    50.1177%     0.0013%
 --------------------------------------------------------------------------------
-Total:               99,999,994
-Time: 0.33s
-Speed: 306,458,346 hands/s
+Total:            1,999,999,995
+Time: 2.92s
+Speed: 684,003,509 hands/s
 ================================================================================
 
 Performance Comparison:
 ----------------
-CPU Time: 12.36s
-GPU Time: 0.33s
-CUDA Speedup: 37.87x
+CPU Time: 227.52s
+GPU Time: 2.92s
+CUDA Speedup: 77.81x
 ```
 
 ## Implementation Details
