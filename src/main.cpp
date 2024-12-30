@@ -11,6 +11,8 @@
 #include "probability.hpp"
 #include "utils.hpp"
 
+static bool noProgressBar = false;
+
 void printUsage(const char* programName) {
   std::cout << "Usage: " << programName << " [options]\n"
             << "Options:\n"
@@ -43,6 +45,7 @@ HandType parseHandType(const std::string& type) {
 }
 
 void printProgress(float progress) {
+  if (noProgressBar) return;
   int barWidth = 70;
   std::cout << "[";
   int pos = static_cast<int>(barWidth * progress);
@@ -157,6 +160,8 @@ int main(int argc, char* argv[]) {
         std::cerr << "Error: Number of hands must be positive\n";
         return 1;
       }
+    } else if (arg == "--no_progress_bar") {
+      noProgressBar = true;
     } else {
       std::cerr << "Unknown argument: " << arg << "\n";
       printUsage(argv[0]);
