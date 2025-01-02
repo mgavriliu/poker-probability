@@ -27,6 +27,7 @@ void printUsage(const char* programName) {
             << "                 fl (Flush), st (Straight), 3k (Three of a Kind),\n"
             << "                 2p (Two Pair), 1p (One Pair), hc (High Card)\n"
             << "  -n NUMBER      Number of hands to simulate (default: 100000000)\n"
+            << "  --no_progress_bar  Disable progress bar\n"
             << std::endl;
 }
 
